@@ -1,3 +1,57 @@
-body {
+@import "./theme.css";
+
+* {
     font-family: sans-serif;
+    font-size: 16px;
+}
+
+.header {
+    width: 100%;
+}
+
+.item-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.item-header {
+    color: #ceced2;
+    text-align: left;
+    border-top: 1px solid #e9e9eb;
+}
+
+.item-row {
+    color: #cfcfd3;
+    border-top: 1px solid #e9e9eb;
+}
+
+.btn-container {
+    text-align: right;
+    padding-top: 20px;
+}
+
+.date-input {
+    display: block;
+    padding: 8px;
+    width: calc(100% - 20px);
+}
+
+.btn {
+    padding: 16px 24px;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.btn-apply {
+    background-color: #ab5de8;
+}
+
+.btn-reset {
+    background-color: #f171f2;
+}
+
+/* override above 768px */
+@media only screen and (min-width: 768px) {
+
 }

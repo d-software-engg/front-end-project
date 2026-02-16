@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>TT-1 using JavaScript and CSS</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
+
 <body>
-    <main>
+    <header class="header">
         <h3>Creation Date</h3>
+        <div class="filter-toolbar">
+            <div class="input-container">
+            <input type="text" id="date-input-1" class="date-input" placeholder="mm/dd/yyyy" pattern="\d{1,2}/\d{1,2}/\d{4}">
+            <input type="text" id="date-input-2" class="date-input margin-top-20" placeholder="mm/dd/yyyy" pattern="\d{1,2}/\d{1,2}/\d{4}">
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-apply">Apply</button>
+            <button class="btn btn-reset">Reset</button>
+        </div>
+        </div>
+    </header>
+    <main>
+        <table id="itemTable" class="item-table">
+            <thead>
+                <tr>
+                    <th class="item-header">Name</th>
+                    <th class="item-header">Creation Date</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
     </main>
     <script src="js/main.js"></script>
 </body>
+
 </html>
