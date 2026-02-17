@@ -13,7 +13,8 @@ function getRandomDate(start, end) {
     return `${month}/${day}/${year}`;
 }
 
-async function getData() {
+function getData() {
+    /*
     try {
         const response = await fetch('https://jsonplaceholder.typicode.com/todos?_limit=20');
         
@@ -33,6 +34,29 @@ async function getData() {
     } catch (error) {
         console.error('error:', error);
     }
+    */
+
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=20')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Error fetching data');
+        }
+
+        return response.json();
+    })
+    .then(data => data.map(d => ({
+            ...d,
+            creationDate: getRandomDate(startDate, endDate)
+        })
+    ))
+    .then(processedData => {
+        todoList = processedData;
+        console.log(todoList);
+        createTableBody(todoList);
+    })
+    .catch(error => {
+        console.error('error:', error);
+    });
 }
 
 function mapCreationDateAndBuildRow(data) {
@@ -43,8 +67,14 @@ function createTableBody(data) {
     const tableBody = document.querySelector('#tableBody');
     const tableHTML = data.map(d => `
         <tr>
-            <td class="item-row">${d.title}</td>
+            <td>
+                <i class="fa-regular fa-square"></i>
+                <i class="fa-regular fa-pen-to-square"></i>
+            </td>
+            <td class="item-row">
+                ${d.title}</td>
             <td class="item-row">${d.creationDate}</td>
+            <td><i class="fa-regular fa-trash-can"></i></td>
         </tr>
     `).join('');
 

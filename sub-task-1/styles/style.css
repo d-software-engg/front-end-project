@@ -51,6 +51,22 @@
     background-color: #f171f2;
 }
 
+.fa-regular {
+    cursor: pointer;
+}
+
+.fa-trash-can {
+    color: red;
+}
+
+.fa-square {
+    color: #e9e9eb;
+}
+
+.fa-pen-to-square {
+    color: #1E90FF;
+}
+
 /* override above 768px */
 @media only screen and (min-width: 768px) {
 
