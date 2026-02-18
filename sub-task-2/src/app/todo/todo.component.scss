@@ -1,0 +1,65 @@
+.header {
+    width: 100%;
+}
+
+.margin-top-20 {
+    margin-top: 20px;
+}
+
+.margin-right-20 {
+    margin-right: 20px;
+}
+
+.btn-container {
+    text-align: right;
+    padding-top: 20px;
+
+    .btn {
+        padding: 16px 24px;
+        border: none;
+        color: #ffffff;
+        cursor: pointer;
+    }
+
+    .btn-apply {
+        @extend .margin-right-20;
+        background-color: #ab5de8;
+    }
+
+    .btn-reset {
+        background-color: #f171f2;
+    }
+}
+
+.item-header {
+    text-align: left;
+}
+
+.fa {
+    &-regular {
+        cursor: pointer;
+    }
+
+    &-trash-can {
+        color: red;
+    }
+
+    &-square {
+        margin-right: 8px;
+        color: #e9e9eb;
+    }
+
+    &-pen-to-square {
+        color: #1E90FF;
+    }
+}
+
+.date-input {
+    display: block;
+    padding: 8px;
+    border: 1px solid #e9e9eb;
+    width: 100%;
+}
+
+/* override above 768px */
+@media only screen and (min-width: 768px) {}

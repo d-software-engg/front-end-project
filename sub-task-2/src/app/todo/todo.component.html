@@ -1,0 +1,35 @@
+<!-- Todo Code -->
+<section class="se">
+    <h3>Creation Date</h3>
+    <div class="filter-toolbar">
+        <div class="input-container">
+            <input type="text" id="date-input-1" class="date-input" placeholder="mm/dd/yyyy"
+                pattern="\d{1,2}/\d{1,2}/\d{4}">
+            <input type="text" id="date-input-2" class="date-input margin-top-20" placeholder="mm/dd/yyyy"
+                pattern="\d{1,2}/\d{1,2}/\d{4}">
+        </div>
+        <div class="btn-container">
+            <button class="btn btn-apply">Apply</button>
+            <button class="btn btn-reset">Reset</button>
+        </div>
+    </div>
+    @if(todoItems()) {
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th class="item-header">Name</th>
+                <th class="item-header">Creation Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @for (item of todoItems(); track item.id) {
+                <tr app-item [item]="item"></tr>
+            }
+        </tbody>
+    </table>
+    } @else {
+    <p>Loading list...</p>
+    }
+</section>
